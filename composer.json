@@ -1,0 +1,26 @@
+{
+    "name": "ampluso/pinger-bundle",
+    "type": "library",
+    "description": "PingerBundle",
+    "keywords": ["pinger", "bundle", "google", "service"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcin Chyłek",
+            "email": "marcin@chylek.pl",
+            "homepage": "http://chylek.pl"
+        },
+        {
+            "name": "AMPLUSO",
+            "email": "bok@ampluso.pl",
+            "homepage": "http://ampluso.pl"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "PingerBundle\\": "./" }
+     }
+}
