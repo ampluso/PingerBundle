@@ -11,14 +11,8 @@
 
 namespace Ampluso\PingerBundle\Request\Client;
 
-use Ampluso\PingerBundle\Request\Client\Client;
-
-class XMLRPCClient extends Client
+interface ClientInterface
 {
 
-    public function prepare()
-    {
-        return xmlrpc_encode_request("pingback.ping", array($this->url, $this->url));
-    }
-
+    public function prepare();
 }
