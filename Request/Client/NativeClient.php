@@ -9,17 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace PingerBundle;
+namespace Ampluso\PingerBundle\Request\Client;
 
-class Pinger
+use Ampluso\PingerBundle\Request\Client\Client;
+
+class NativeClient extends Client
 {
-    public function __construct()
+
+    public function prepare()
     {
-    
+        
     }
-    
-    public function send()
-    {
-        return true;
-    }
+
 }

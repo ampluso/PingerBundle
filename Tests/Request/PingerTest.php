@@ -9,12 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace PingerBundle\Tests;
+namespace Ampluso\PingerBundle\Tests\Request;
 
-//use PingerBundle\Pinger;
+use Ampluso\PingerBundle\Request\Pinger;
 
 class PingerTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * @var Pinger
      */
@@ -25,8 +26,19 @@ class PingerTest extends \PHPUnit_Framework_TestCase
         $this->object = new Pinger;
     }
 
-    public function sendTest()
+    protected function tearDown()
     {
-        $this->assertTrue($this->object->send());
+        
     }
+
+    /**
+     * @covers PingerBundle\Request\Pinger::send
+     */
+    public function testSend()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
+    }
+
 }
