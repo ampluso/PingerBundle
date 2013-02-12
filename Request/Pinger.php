@@ -11,14 +11,15 @@
 
 namespace Ampluso\PingerBundle\Request;
 
-use Ampluso\PingerBundle\Request\PingerException;
 use Ampluso\PingerBundle\Request\Client\NativeClient;
 use Ampluso\PingerBundle\Request\Client\XMLRPCClient;
+use Ampluso\PingerBundle\Request\PingerException;
 
 class Pinger
 {
 
-    private $isXMLRPCExists = true;
+    private $isXMLRPCExists = false;
+    private $client = null;
 
     /**
      * 
@@ -26,8 +27,8 @@ class Pinger
      */
     public function __construct()
     {
-        if (!function_exists('xmlrpc_server_create')) {
-            $this->isXMLRPCExists = false;
+        if (function_exists('xmlrpc_server_create')) {
+            $this->isXMLRPCExists = true;
         }
 
         if (!function_exists('curl_init')) {
@@ -35,9 +36,37 @@ class Pinger
         }
     }
 
-    public function send()
+    public function pingServices($url)
     {
         
+    }
+
+    public function pingService($url, $service)
+    {
+        $client = $this->getClientFactory();
+        $client->setUrl($url);
+        $client->setService($service);
+        
+        $client->ping();
+    }
+
+    public function getService()
+    {
+        
+    }
+
+    /**
+     * Get client object
+     * 
+     * @return \Ampluso\PingerBundle\Request\Client\Client object
+     */
+    private function getClientFactory()
+    {
+        if ($this->isXMLRPCExists) {
+            return new XMLRPCClient();
+        } else {
+            return new NativeClient();
+        }
     }
 
 }
