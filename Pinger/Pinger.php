@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Ampluso\PingerBundle\Request;
+namespace Ampluso\PingerBundle\Pinger;
 
-use Ampluso\PingerBundle\Request\Client\NativeClient;
-use Ampluso\PingerBundle\Request\Client\XMLRPCClient;
-use Ampluso\PingerBundle\Request\PingerException;
+use Ampluso\PingerBundle\Pinger\Request\NativeRequest;
+use Ampluso\PingerBundle\Pinger\Request\XMLRPCRequest;
+use Ampluso\PingerBundle\Pinger\Response\Response;
+use Ampluso\PingerBundle\Exception\PingerException;
 
 class Pinger
 {
 
     private $isXMLRPCExists = false;
-    private $client = null;
 
     /**
      * 
@@ -38,19 +38,23 @@ class Pinger
 
     public function pingServices($url)
     {
-        
+        $serviceList = $this->getServices();
+
+        foreach ($serviceList as $service) {
+            $this->pingService($url, $service);
+        }
     }
 
     public function pingService($url, $service)
     {
-        $client = $this->getClientFactory();
-        $client->setUrl($url);
-        $client->setService($service);
-        
-        $client->ping();
+        $request = $this->getRequestFactory();
+        $request->setUrl($url);
+        $request->setService($service);
+
+        return new Response($request->ping());
     }
 
-    public function getService()
+    public function getServices()
     {
         
     }
@@ -58,14 +62,14 @@ class Pinger
     /**
      * Get client object
      * 
-     * @return \Ampluso\PingerBundle\Request\Client\Client object
+     * @return \Ampluso\PingerBundle\Request\Request\Request object
      */
-    private function getClientFactory()
+    private function getRequestFactory()
     {
         if ($this->isXMLRPCExists) {
-            return new XMLRPCClient();
+            return new XMLRPCRequest();
         } else {
-            return new NativeClient();
+            return new NativeRequest();
         }
     }
 

@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ampluso\PingerBundle\Request\Client;
+namespace Ampluso\PingerBundle\Pinger\Request;
 
-use Ampluso\PingerBundle\Request\Client\ClientInterface;
+use Ampluso\PingerBundle\Pinger\Request\RequestInterface;
 
-abstract class Client implements ClientInterface
+abstract class Request implements RequestInterface
 {
 
     protected $url = null;
@@ -39,11 +39,22 @@ abstract class Client implements ClientInterface
         $this->serviceUrl = $serviceUrl;
     }
 
+    /**
+     * Ping service
+     * 
+     * @return string
+     */
     public function ping()
     {
-        $result = $this->send($this->prepare());
+        return $this->send($this->prepare());
     }
 
+    /**
+     * Send data to service
+     * 
+     * @param xml $request
+     * @return string
+     */
     private function send($request)
     {
         $ch = curl_init();

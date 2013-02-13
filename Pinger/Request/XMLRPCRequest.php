@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Ampluso\PingerBundle\Request\Client;
+namespace Ampluso\PingerBundle\Pinger\Request;
 
-use Ampluso\PingerBundle\Request\Client\Client;
+use Ampluso\PingerBundle\Pinger\Request\Request;
 
-class XMLRPCClient extends Client
+class XMLRPCRequest extends Request
 {
 
     public function prepare()

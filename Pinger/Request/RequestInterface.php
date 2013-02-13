@@ -9,16 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ampluso\PingerBundle\Request\Client;
+namespace Ampluso\PingerBundle\Pinger\Request;
 
-use Ampluso\PingerBundle\Request\Client\Client;
-
-class NativeClient extends Client
+interface RequestInterface
 {
 
-    public function prepare()
-    {
-        
-    }
-
+    public function prepare();
 }

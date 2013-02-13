@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Ampluso\PingerBundle\Request\Pinger;
+use Ampluso\PingerBundle\Pinger\Pinger;
 
 class PingerCommand extends ContainerAwareCommand
 {
@@ -48,7 +48,8 @@ class PingerCommand extends ContainerAwareCommand
         $service = 'http://blogsearch.google.com/ping/RPC2';
 
         $output->writeln('<info>Ping:</info> <comment>'.$url.'</comment> <info>-></info> <comment>'.$service.'</comment>');
-        $pinger->pingService($url, $service);
+        
+        echo $pinger->pingService($url, $service);
 
         $output->writeln('<info>Stop pinger:</info> <comment>'.$url.'</comment>');
     }

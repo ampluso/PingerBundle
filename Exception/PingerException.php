@@ -9,10 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ampluso\PingerBundle\Request\Client;
+namespace Ampluso\PingerBundle\Exception;
 
-interface ClientInterface
+class PingerException extends \Exception
 {
-
-    public function prepare();
+    
 }

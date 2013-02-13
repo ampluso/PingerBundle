@@ -9,9 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Ampluso\PingerBundle\Request;
+namespace Ampluso\PingerBundle\Pinger\Request;
 
-class PingerException extends \Exception
+use Ampluso\PingerBundle\Pinger\Request\Request;
+
+class NativeRequest extends Request
 {
-    
+
+    public function prepare()
+    {
+        
+    }
+
 }

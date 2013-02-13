@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ampluso\PingerBundle\Tests\Request;
+namespace Ampluso\PingerBundle\Tests\Pinger;
 
-use Ampluso\PingerBundle\Request\Pinger;
+use Ampluso\PingerBundle\Pinger\Pinger;
 
 class PingerTest extends \PHPUnit_Framework_TestCase
 {
@@ -31,9 +31,6 @@ class PingerTest extends \PHPUnit_Framework_TestCase
         
     }
 
-    /**
-     * @covers PingerBundle\Request\Pinger::send
-     */
     public function testSend()
     {
         $this->markTestIncomplete(
