@@ -29,7 +29,7 @@ class Response
 
     public function __toString()
     {
-        return $this->responseString;
+        return (string)$this->responseString;
     }
 
     private function parse()

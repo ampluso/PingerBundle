@@ -44,12 +44,12 @@ class PingerCommand extends ContainerAwareCommand
         $output->writeln('<info>Start pinger:</info> <comment>'.$url.'</comment>');
 
         $pinger = new Pinger();
-        // test ping
-        $service = 'http://blogsearch.google.com/ping/RPC2';
+        $services = $pinger->getServices();
 
-        $output->writeln('<info>Ping:</info> <comment>'.$url.'</comment> <info>-></info> <comment>'.$service.'</comment>');
-        
-        echo $pinger->pingService($url, $service);
+        foreach ($services as $service) {
+            $output->writeln('<info>Ping:</info> <comment>'.$url.'</comment> <info>-></info> <comment>'.$service.'</comment>');
+            echo $pinger->pingService($url, $service);
+        }
 
         $output->writeln('<info>Stop pinger:</info> <comment>'.$url.'</comment>');
     }
