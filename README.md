@@ -11,7 +11,7 @@ PingerBundle (bundle for Symfony2) is a service to update different search engin
 
 ### Composer
 
-#### Method 1 ####
+#### Method 1
 
     Simply run assuming you have installed composer.phar or composer binary:
 
@@ -19,7 +19,7 @@ PingerBundle (bundle for Symfony2) is a service to update different search engin
     $ composer require ampluso/pinger-bundle dev-master
     ```
 
- ### Method 2 ####
+ ### Method 2
 
     1. Add the following lines in your composer.json:
 
