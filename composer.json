@@ -20,6 +20,7 @@
         "issues": "http://github.com/ampluso/PingerBundle/issues"
     },
     "require": {
+        "php": ">=5.3.3",
         "symfony/framework-bundle": "2.*"
     },
     "autoload": {
