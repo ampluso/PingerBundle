@@ -1,8 +1,8 @@
 {
     "name": "ampluso/pinger-bundle",
     "type": "symfony-bundle",
-    "description": "PingerBundle",
-    "keywords": ["pinger", "bundle", "google", "service"],
+    "description": "PingerBundle (bundle for Symfony2) is a service to update different search engines that your blog or website has updated.",
+    "keywords": ["pinger", "bundle", "google", "service", "ping", "xml-rpc", "extended ping"],
     "license": "MIT",
     "authors": [
         {
