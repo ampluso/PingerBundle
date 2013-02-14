@@ -36,18 +36,19 @@ class Pinger
         }
     }
 
-    public function pingServices($url)
+    public function pingServices($title, $url)
     {
         $serviceList = $this->getServices();
 
         foreach ($serviceList as $service) {
-            $this->pingService($url, $service);
+            $this->pingService($service, $title, $url);
         }
     }
 
-    public function pingService($url, $service)
+    public function pingService($service, $title, $url)
     {
         $request = $this->getRequestFactory();
+        $request->setTitle($title);
         $request->setUrl($url);
         $request->setService($service);
 
@@ -57,56 +58,8 @@ class Pinger
     public function getServices()
     {
         return array(
-            'http://api.my.yahoo.com/RPC2',
-            'http://rpc.blogrolling.com/pinger/',
+            'http://rpc.weblogs.com/RPC2',
             'http://blogsearch.google.com/ping/RPC2',
-            'http://api.feedster.com/ping',
-            'http://rpc.icerocket.com:10080',
-            'http://www.bloglines.com/ping',
-            'http://api.moreover.com/RPC2',
-            'http://api.mw.net.tw/RPC2',
-            'http://api.my.yahoo.com/ping',
-            'http://bitacoras.net/ping/',
-            'http://blogoole.com/ping/',
-            'http://blogoon.net/ping',
-            'http://blogpeople.net/ping',
-            'http://blogping.unidatum.com/RPC2/',
-            'http://blogsdominicanos.com/ping',
-            'http://blogsearch.google.ae/ping/RPC2',
-            'http://blogsearch.google.at/ping/RPC2',
-            'http://blogsearch.google.be/ping/RPC2',
-            'http://blogsearch.google.bg/ping/RPC2',
-            'http://blogsearch.google.ca/ping/RPC2',
-            'http://blogsearch.google.ch/ping/RPC2',
-            'http://blogsearch.google.cl/ping/RPC2',
-            'http://blogsearch.google.co.cr/ping/RPC2',
-            'http://blogsearch.google.co.hu/ping/RPC2',
-            'http://blogsearch.google.co.id/ping/RPC2',
-            'http://blogsearch.google.co.il/ping/RPC2',
-            'http://blogsearch.google.co.uk/ping/RPC2',
-            'http://blogsearch.google.co.ve/ping/RPC2',
-            'http://blogsearch.google.co.za/ping/RPC2',
-            'http://blogsearch.google.com.ar/ping/RPC2',
-            'http://blogsearch.google.com.au/ping/RPC2',
-            'http://blogsearch.google.com.br/ping/RPC2',
-            'http://blogsearch.google.com.co/ping/RPC2',
-            'http://blogsearch.google.com.do/ping/RPC2',
-            'http://blogsearch.google.com.mx/ping/RPC2',
-            'http://blogsearch.google.com.my/ping/RPC2',
-            'http://blogsearch.google.com.pe/ping/RPC2',
-            'http://blogsearch.google.de/ping/RPC2',
-            'http://blogsearch.google.es/ping/RPC2',
-            'http://blogsearch.google.fr/ping/RPC2',
-            'http://blogsearch.google.gr/ping/RPC2',
-            'http://blogsearch.google.hr/ping/RPC2',
-            'http://blogsearch.google.ie/ping/RPC2',
-            'http://blogsearch.google.it/ping/RPC2',
-            'http://blogsearch.google.lt/ping/RPC2',
-            'http://blogsearch.google.pl/ping/RPC2',
-            'http://blogsearch.google.pt/ping/RPC2',
-            'http://blogsearch.google.ru/ping/RPC2',
-            'http://blogsearch.google.sk/ping/RPC2',
-            'http://blogsearch.google.us/ping/RPC2',
         );
     }
 

@@ -18,7 +18,7 @@ class XMLRPCRequest extends Request
 
     public function prepare()
     {
-        return xmlrpc_encode_request("pingback.ping", array($this->url, $this->url));
+        return xmlrpc_encode_request("weblogUpdates.ping", array($this->url, $this->url));
     }
 
 }

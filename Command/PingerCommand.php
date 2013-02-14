@@ -28,7 +28,8 @@ class PingerCommand extends ContainerAwareCommand
         $this
             ->setName('pinger:url')
             ->setDescription('PingerBundle service')
-            ->addArgument('url', InputArgument::REQUIRED, 'URL to pinger')
+            ->addArgument('title', InputArgument::REQUIRED, 'Site title')
+            ->addArgument('url', InputArgument::REQUIRED, 'Site url')
         ;
     }
 
@@ -40,7 +41,9 @@ class PingerCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $title = $input->getArgument('title');
         $url = $input->getArgument('url');
+        
         $output->writeln('<info>Start pinger:</info> <comment>'.$url.'</comment>');
 
         $pinger = new Pinger();
@@ -48,7 +51,7 @@ class PingerCommand extends ContainerAwareCommand
 
         foreach ($services as $service) {
             $output->writeln('<info>Ping:</info> <comment>'.$url.'</comment> <info>-></info> <comment>'.$service.'</comment>');
-            echo $pinger->pingService($url, $service);
+            echo $pinger->pingService($service, $title, $url);
         }
 
         $output->writeln('<info>Stop pinger:</info> <comment>'.$url.'</comment>');

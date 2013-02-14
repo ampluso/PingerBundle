@@ -16,8 +16,19 @@ use Ampluso\PingerBundle\Pinger\Request\RequestInterface;
 abstract class Request implements RequestInterface
 {
 
+    protected $title = null;
     protected $url = null;
     protected $serviceUrl = null;
+
+    /**
+     * Set site title
+     * 
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
     /**
      * Set site url
