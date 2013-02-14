@@ -13,43 +13,43 @@ PingerBundle (bundle for Symfony2) is a service to update different search engin
 
 #### Method 1
 
-    Simply run assuming you have installed composer.phar or composer binary:
+Simply run assuming you have installed composer.phar or composer binary:
 
-    ```bash
-    $ composer require ampluso/pinger-bundle dev-master
-    ```
+```bash
+$ composer require ampluso/pinger-bundle dev-master
+```
 
  ### Method 2
 
-    1. Add the following lines in your composer.json:
+1. Add the following lines in your composer.json:
 
-    ```js
-    {
-      "require": {
-        "ampluso/pinger-bundle": "dev-master"
-      }
-    }
-    ```
+```js
+{
+  "require": {
+    "ampluso/pinger-bundle": "dev-master"
+  }
+}
+```
 
-    2. Run the composer to download the bundle
+2. Run the composer to download the bundle
 
-    ```bash
-    $ php composer.phar update ampluso/pinger-bundle
-    ```
+```bash
+$ php composer.phar update ampluso/pinger-bundle
+```
 
 ### Add this bundle to your application's kernel
 
-    ```php
-    // app/ApplicationKernel.php
-    public function registerBundles()
-    {
-        return array(
-            // ...
-            new Ampluso\PingerBundle\PingerBundle(),
-            // ...
-        );
-    }
-      ```
+```php
+// app/ApplicationKernel.php
+public function registerBundles()
+{
+    return array(
+        // ...
+        new Ampluso\PingerBundle\PingerBundle(),
+        // ...
+    );
+}
+```
 
 ## Authors
 
