@@ -19,7 +19,7 @@ Simply run assuming you have installed composer.phar or composer binary:
 $ composer require ampluso/pinger-bundle dev-master
 ```
 
- ### Method 2
+### Method 2
 
 1. Add the following lines in your composer.json:
 
