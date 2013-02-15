@@ -61,9 +61,9 @@ abstract class Request implements RequestInterface
     }
 
     /**
-     * Send data to service
+     *  XML-RPC Request
      * 
-     * @param xml $request
+     * @param string $request
      * @return string
      */
     private function send($request)

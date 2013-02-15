@@ -27,7 +27,7 @@ class PingerCommand extends ContainerAwareCommand
     {
         $this
             ->setName('pinger:url')
-            ->setDescription('PingerBundle service')
+            ->setDescription('PingerBundle is a service to update different search engines that your blog or website has updated.')
             ->addArgument('title', InputArgument::REQUIRED, 'Site title')
             ->addArgument('url', InputArgument::REQUIRED, 'Site url')
         ;

@@ -11,6 +11,8 @@ PingerBundle (bundle for Symfony2) is a service to update different search engin
 
 ### Composer
 
+The preferred way to install this bundle is to rely on [Composer](http://getcomposer.org).
+
 #### Method 1
 
 Simply run assuming you have installed composer.phar or composer binary:
