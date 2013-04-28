@@ -60,6 +60,15 @@ class Pinger
         return array(
             'http://rpc.weblogs.com/RPC2',
             'http://blogsearch.google.com/ping/RPC2',
+            'http://api.my.yahoo.co.jp/RPC2',
+            'http://www.blogpeople.net/ping',
+            'http://xping.pubsub.com/ping/',
+            'http://ping.pubsub.com/ping',
+            'http://rpc.aitellu.com',
+            'http://rpc.reader.livedoor.com/ping',
+            'http://rpc.odiogo.com/ping/',
+            'http://rpc.twingly.com',
+            'http://audiorpc.weblogs.com/RPC2',
         );
     }
 
