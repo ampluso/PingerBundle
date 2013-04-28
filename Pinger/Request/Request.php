@@ -79,7 +79,7 @@ abstract class Request implements RequestInterface
         $result = curl_exec($ch);
         curl_close($ch);
 
-        return $result;
+        return html_entity_decode($result);
     }
 
 }
