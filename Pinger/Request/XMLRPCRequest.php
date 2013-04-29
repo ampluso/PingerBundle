@@ -18,6 +18,8 @@ class XMLRPCRequest extends Request
 
     public function prepare()
     {
+        echo xmlrpc_encode_request("weblogUpdates.ping", array($this->title, $this->url))."\n\n";
+        
         return xmlrpc_encode_request("weblogUpdates.ping", array($this->title, $this->url));
     }
 
